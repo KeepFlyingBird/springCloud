@@ -1,0 +1,36 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    # 数据库连接池 HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://10.0.3.4:3306/pf_czbank?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: dev_user
+    password: dev_user@jy28%JK
+    hikari:
+      # 池中维护的最小空闲连接数
+      minimum-idle: 5
+      # 池中最大连接数，包括闲置和使用中的连接
+      maximum-pool-size: 15
+      # 自动提交
+      auto-commit: true
+      # 连接允许在池中闲置的最长时间
+      idle-timeout: 30000
+      # 池中连接最长生命周期
+      max-lifetime: 1800000
+      # 等待来自池的连接的最大毫秒数
+      connection-timeout: 30000
+feign:
+  httpclient:
+    enabled: false # 是否启用httpclient
+    connection-timeout: 5000 # 请求连接超时时间（毫秒）
+  okhttp:
+    enabled: true # 是否启用httpok（性能比httpclient高）
+  hystrix:
+    enabled: true # 是否启用hystrix
+
+logging:
+  level:
+    cn.freeFly.springcloud.feign.UserServiceFeignClient: DEBUG
