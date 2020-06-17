@@ -22,6 +22,7 @@ spring:
       max-lifetime: 1800000
       # 等待来自池的连接的最大毫秒数
       connection-timeout: 30000
+
 feign:
   httpclient:
     enabled: false # 是否启用httpclient
@@ -34,3 +35,4 @@ feign:
 logging:
   level:
     cn.freeFly.springcloud.feign.UserServiceFeignClient: DEBUG
+    cn.freeFly.springcloud.feign.CustomizeServiceFeignClient: DEBUG
