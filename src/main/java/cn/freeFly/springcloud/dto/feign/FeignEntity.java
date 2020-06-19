@@ -1,4 +1,4 @@
-package cn.freeFly.springcloud.entity.feign;
+package cn.freeFly.springcloud.dto.feign;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;

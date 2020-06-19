@@ -1,6 +1,6 @@
 package cn.freeFly.springcloud.feign.fallBackFactory;
 
-import cn.freeFly.springcloud.entity.BaseResponse;
+import cn.freeFly.springcloud.dto.BaseResponse;
 import cn.freeFly.springcloud.feign.UserServiceFeignClient;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class CodeGeneratorUtil {
-    public static final String[] TABLE_ARR = new String[] {"cacmp_refund_result"};
+    public static final String[] TABLE_ARR = new String[] {"cacmp_schedule_config"};
 
     /**
      * <p>
@@ -94,7 +94,7 @@ public class CodeGeneratorUtil {
         // 包配置
         PackageConfig pc = new PackageConfig();
         // 自定义包路径
-        pc.setParent("cn.freefly.springboot.mybatisPlus");
+        pc.setParent("cn.freefly.springcloud");
         // 设置包名-实体对象
         pc.setEntity("entity");
         // 设置包名-service
@@ -125,7 +125,7 @@ public class CodeGeneratorUtil {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/mybatisPlus/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+                return projectPath + "/src/main/resources/mapper/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
         cfg.setFileOutConfigList(focList);

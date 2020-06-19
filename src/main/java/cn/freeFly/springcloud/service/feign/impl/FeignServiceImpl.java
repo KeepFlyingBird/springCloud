@@ -1,6 +1,6 @@
 package cn.freeFly.springcloud.service.feign.impl;
 
-import cn.freeFly.springcloud.entity.BaseResponse;
+import cn.freeFly.springcloud.dto.BaseResponse;
 import cn.freeFly.springcloud.feign.CustomizeServiceFeignClient;
 import cn.freeFly.springcloud.feign.UserServiceFeignClient;
 import cn.freeFly.springcloud.service.feign.FeignService;

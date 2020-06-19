@@ -6,7 +6,7 @@ spring:
     # 数据库连接池 HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://10.0.3.4:3306/pf_czbank?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://10.0.3.4:3306/jy_fund_test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
     username: dev_user
     password: dev_user@jy28%JK
     hikari:

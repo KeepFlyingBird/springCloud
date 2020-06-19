@@ -1,4 +1,4 @@
-package cn.freeFly.springcloud.entity;
+package cn.freeFly.springcloud.dto;
 
 import cn.freeFly.springcloud.constants.BaseConstant;
 import lombok.AllArgsConstructor;

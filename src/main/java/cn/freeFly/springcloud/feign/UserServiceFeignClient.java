@@ -1,6 +1,6 @@
 package cn.freeFly.springcloud.feign;
 
-import cn.freeFly.springcloud.entity.BaseResponse;
+import cn.freeFly.springcloud.dto.BaseResponse;
 import cn.freeFly.springcloud.feign.fallBackFactory.UserServiceFeignClientFallBackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

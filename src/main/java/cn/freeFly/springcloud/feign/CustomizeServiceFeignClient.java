@@ -1,7 +1,7 @@
 package cn.freeFly.springcloud.feign;
 
 import cn.freeFly.springcloud.config.feign.FeignClientCustomizeConfiguration;
-import cn.freeFly.springcloud.entity.BaseResponse;
+import cn.freeFly.springcloud.dto.BaseResponse;
 import cn.freeFly.springcloud.feign.fallBackFactory.CustomizeServiceFeignClientFallBackFactory;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
