@@ -23,6 +23,14 @@ spring:
       # 等待来自池的连接的最大毫秒数
       connection-timeout: 30000
 
+  rabbitmq:
+    # vpn:10.0.2.3:45672 测试服务器：183.84.2.5:5762
+    host: '10.0.1.46' # RabbitMQ 服务器地址
+    port: 5762 # RabbitMQ 服务器端口
+    username: 'picc_callback_test' # RabbitMQ 服务器用户
+    password: 'S823cichege2R1tlbamA' # RabbitMQ 服务器密码
+    virtual-host: '/cacmp/picc/callback'
+
 feign:
   httpclient:
     enabled: false # 是否启用httpclient
