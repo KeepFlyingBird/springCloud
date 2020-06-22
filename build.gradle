@@ -48,5 +48,8 @@ dependencies {
     implementation "io.springfox:springfox-swagger2:2.9.2"
     implementation "io.springfox:springfox-swagger-ui:2.9.2"
 
+    // 高级消息队列协议
+    compile('org.springframework.boot:spring-boot-starter-amqp')
+
     compile('com.alibaba:fastjson:1.2.70')
 }
