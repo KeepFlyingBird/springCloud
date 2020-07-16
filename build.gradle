@@ -1,7 +1,12 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.8.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
+}
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR2'
+    }
 }
 
 group 'cn.freeFly'
@@ -10,17 +15,54 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenLocal()
-    maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
+//    mavenLocal()
+//    maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
     mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
-    implementation'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+
+    //构建Web，包含RESTful风格框架SpringMVC和调整容器为undertow
     implementation('org.springframework.boot:spring-boot-starter-web'){
         exclude module: "spring-boot-starter-tomcat"
     }
     implementation "org.springframework.boot:spring-boot-starter-undertow"
+//    implementation 'org.springframework.boot:spring-boot-starter-web'
+//    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+//        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+//    }
+
+    //feign方式远程调用需要的包
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.2.RELEASE'
+
+    // mysql
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '3.4.5'
+
+    //lombok 依赖
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // mybatis-plus
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.29'
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.1'
+    compile group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.3.1'
+
+    // swagger
+    implementation "io.springfox:springfox-swagger2:2.9.2"
+    implementation "io.springfox:springfox-swagger-ui:2.9.2"
+
+    // 高级消息队列协议
+    compile('org.springframework.boot:spring-boot-starter-amqp')
+
+    compile('com.alibaba:fastjson:1.2.70')
+
+    // consul
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-consul-discovery', version: '2.2.2.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-consul-config', version: '2.2.2.RELEASE'
 }
