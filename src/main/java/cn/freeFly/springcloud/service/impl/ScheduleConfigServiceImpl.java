@@ -21,7 +21,7 @@ import java.util.List;
 @Service
 public class ScheduleConfigServiceImpl extends ServiceImpl<ScheduleConfigMapper, ScheduleConfig> implements ScheduleConfigService {
     @Autowired
-    public ScheduleConfigMapper scheduleConfigMapper;
+    private ScheduleConfigMapper scheduleConfigMapper;
 
     @Override
     public List<ScheduleConfig> queryActiveTaskScheduleList() {

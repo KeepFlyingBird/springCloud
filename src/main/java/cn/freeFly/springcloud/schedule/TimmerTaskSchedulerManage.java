@@ -22,9 +22,10 @@ import java.util.concurrent.ScheduledFuture;
 @Component
 public class TimmerTaskSchedulerManage {
     @Autowired
-    public ScheduleConfigService scheduleConfigService;
+    private ScheduleConfigService scheduleConfigService;
     @Autowired
     private ThreadPoolTaskScheduler timmerTaskThreadPoolTaskScheduler;
+
     private Map<String, ScheduledFuture<?>> futuresMap = new ConcurrentHashMap<String, ScheduledFuture<?>>();
 
     @Bean
