@@ -22,6 +22,18 @@ spring:
       max-lifetime: 1800000
       # 等待来自池的连接的最大毫秒数
       connection-timeout: 30000
+  cloud:
+    consul:
+      discovery:
+        enabled: true #启用服务发现
+        register: true #启用服务注册
+        deregister: true #服务停止时取消注册
+        healthCheckPath: /actuator/health #健康检查的路径
+        healthCheckInterval: 10s #执行监控检查的频率
+        serviceName: consul-producer
+        # prefer-ip-address: true #表示注册时使用IP而不是hostname
+        # 服务注册标识，格式为：应用名称+服务器IP+端口
+        # instance-id: ${spring.application.name} #${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
 
   rabbitmq:
     # vpn:10.0.2.3:45672 测试服务器：183.84.2.5:5762
@@ -44,3 +56,8 @@ logging:
   level:
     cn.freeFly.springcloud.feign.UserServiceFeignClient: DEBUG
     cn.freeFly.springcloud.feign.CustomizeServiceFeignClient: DEBUG
+
+log:
+  path: /logs
+  proName: springboot
+  rootLevel: debug
